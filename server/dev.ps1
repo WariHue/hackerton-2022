@@ -1,3 +1,3 @@
-.\venv\Scripts\Activate.ps1
+.\venv\Scripts
 
 uvicorn main:app --reload --host 0.0.0.0
