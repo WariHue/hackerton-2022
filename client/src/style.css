@@ -1,0 +1,135 @@
+    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+
+body {
+    width: 100vw;
+    margin: 0;
+}
+
+* {
+    font-family: 'Pretendard Variable', sans-serif;
+}
+
+.container-container {
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+.container {
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 48px;
+    width: 100%;
+    max-width: 768px;
+}
+
+.searchbar-container {
+    width: 100%;
+    display: flex;
+
+    gap: 12px;
+}
+.image-container {
+    width: 100%;
+    display: flex;
+
+    gap: 12px;
+}
+
+.searchbar {
+    flex-grow: 1;
+}
+
+.search-button {
+    flex-shrink: 0;
+    padding: 6px 16px;
+    border: none;
+    outline: none;
+
+    background: #2e58ff;
+
+    color: #fff;
+    border-radius: 6px;
+
+    cursor: pointer;
+
+    font-size: 20px;
+
+    font-weight: 100;
+
+    transition: all ease .2s;
+}
+
+.search-button:hover {
+    filter: brightness(0.8);
+}
+
+.search-button:active {
+    filter: brightness(0.6);
+}
+
+.searchbar {
+    border: 1px solid rgba(0, 0, 0, 0.2);
+    background: transparent;
+    border-radius: 6px;
+    padding: 12px 16px;
+    font-size: 18px;
+
+    transition: all ease .2s;
+}
+
+.image {
+    background: transparent;
+    border-radius: 6px;
+    padding: 50px 50px;
+
+    transition: all ease .2s;
+}
+
+.searchbar:focus {
+    outline: none;
+
+    border-color: #2e58ff;
+}
+
+.list {
+    margin-top: 12px;
+}
+
+.list-item {
+    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    padding: 24px;
+}
+
+.list-item-region {
+    font-size: 20px;
+}
+
+.list-item-stats {
+    display: flex;
+
+    margin-top: 12px;
+
+    gap: 16px;
+}
+
+.list-item-stat {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.stat-label {
+    font-weight: 300;
+}
+
+.stat-value {
+    font-weight: 700;
+}
+
+.dino {
+    transition: all ease .6s;
+}
+
+.dino:hover {
+    transform: rotate(360deg);
+}

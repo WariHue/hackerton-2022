@@ -1,0 +1,21 @@
+{
+  "ivstgSpotNm": "P-4(광역기상)",
+  "adres": "정다운요양병원 및 주거지(봉암공단 內)",
+  "xcnts": "163881",
+  "ydnts": "190986",
+  "odrs": [
+    {
+      "ivstgOdr": "0차",
+      "gmenoPm1024hr": "62",
+      "gmenoPm10Year": "62",
+      "gmenoNo21hr": "0.0551",
+      "gmenoNo224hr": "0.022",
+      "gmenoNo2Year": "0.022",
+      "umenoPm1024hr": "62.1",
+      "umenoPm10Year": "62",
+      "umenoNo21hr": "0.0552",
+      "umenoNo224hr": "0.022",
+      "umenoNo2Year": "0.022"
+    }
+  ]
+}

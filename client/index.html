@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" href="/dino-icon.ico" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/src/style.css" />
+    <title>유해 물질 검색</title>
+  </head>
+  <body>
+    <script type="module" src="/src/main.js"></script>
+    <div class="container-container">
+      
+      <div class="container">
+        
+        <form class="searchbar-container" id="search-form">
+          <img src="dino-icon.png" onclick="" class="dino" width="50px" height="50px">
+          <input type="text" class="searchbar" id="searchbar" />
+          <button class="search-button">검색</button>
+        </form>
+        <div class="list" id="list-wrapper"></div>
+      </div>
+    </div>
+    <template id="list-item-template">
+      <div class="list-item">
+        <div class="list-item-region">(지역)</div>
+        <div class="list-item-stats">
+          <div class="list-item-stat">
+            <span class="stat-label">STAT</span>
+            <span class="stat-value">VALUE</span>
+          </div>
+          <div class="list-item-stat">
+            <span class="stat-label">STAT</span>
+            <span class="stat-value">VALUE</span>
+          </div>
+          <div class="list-item-stat">
+            <span class="stat-label">STAT</span>
+            <span class="stat-value">VALUE</span>
+          </div>
+        </div>
+      </div>
+    </template>
+    <!-- <a id="ing" class="button" href="https:\/\/map.naver.com/v5/settings?c=14347224.8189606,4196453.4845635,12.34,0,0,0,dh" target="_blank"> aa </a> -->
+  </body>
+</html>

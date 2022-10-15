@@ -1,0 +1,142 @@
+{
+  "response": {
+    "header": { "resultCode": "00", "resultMsg": "NORMAL_SERVICE" },
+    "body": {
+      "mgtno": "DG2007B002",
+      "ivstgGbs": [
+        {
+          "ivstgGb": "IV01",
+          "ivstgs": [
+            {
+              "ivstgSpotNm": "A-1",
+              "adres": "대구광역시 달성군 유가면 상리 세림제지(주) 뒤",
+              "odrs": [
+                {
+                  "ivstgOdr": "2",
+                  "ivstgBgnde": "20060826",
+                  "ivstgEndde": "20060901",
+                  "pm10Val": "36.3",
+                  "no2Val": "0.018",
+                  "so2Val": "0.004",
+                  "coVal": "0.5",
+                  "o3Val": "0.021",
+                  "pbVal": "-999999",
+                  "envrnGrad": "보통"
+                },
+                {
+                  "ivstgOdr": "3",
+                  "ivstgBgnde": "20061113",
+                  "ivstgEndde": "20061119",
+                  "pm10Val": "37.7",
+                  "no2Val": "0.022",
+                  "so2Val": "0.005",
+                  "coVal": "0.5",
+                  "o3Val": "0.012",
+                  "pbVal": "-999999",
+                  "envrnGrad": "보통"
+                },
+                {
+                  "ivstgOdr": "4",
+                  "ivstgBgnde": "20070205",
+                  "ivstgEndde": "20070211",
+                  "pm10Val": "42.8",
+                  "no2Val": "0.022",
+                  "so2Val": "0.004",
+                  "coVal": "0.5",
+                  "o3Val": "0.01",
+                  "pbVal": "-999999",
+                  "envrnGrad": "보통"
+                },
+                {
+                  "ivstgOdr": "5",
+                  "ivstgBgnde": "20070528",
+                  "ivstgEndde": "20070602",
+                  "pm10Val": "36.2",
+                  "no2Val": "0.02",
+                  "so2Val": "0.004",
+                  "coVal": "0.4",
+                  "o3Val": "0.027",
+                  "pbVal": "-999999",
+                  "envrnGrad": "보통"
+                }
+              ]
+            }
+          ]
+        },
+        {
+          "ivstgGb": "IV20",
+          "ivstgs": [
+            {
+              "ivstgSpotNm": "A-1",
+              "adres": "상1리마을",
+              "xcnts": "150.555",
+              "ydnts": "244.82",
+              "odrs": [
+                {
+                  "ivstgOdr": "2016_1차",
+                  "ivstgBgnde": "20160305",
+                  "ivstgEndde": "20160326",
+                  "pm10Val": "45",
+                  "no2Val": "0.012",
+                  "so2Val": "0.015",
+                  "coVal": "2.1",
+                  "envrnGrad": "보통"
+                },
+                {
+                  "ivstgOdr": "2016_2차",
+                  "ivstgBgnde": "20160504",
+                  "ivstgEndde": "20160525",
+                  "pm10Val": "40",
+                  "no2Val": "0.009",
+                  "so2Val": "0.018",
+                  "coVal": "1.5",
+                  "envrnGrad": "보통"
+                },
+                {
+                  "ivstgOdr": "2016_3차",
+                  "ivstgBgnde": "20160819",
+                  "ivstgEndde": "20160923",
+                  "pm10Val": "49",
+                  "no2Val": "0.013",
+                  "so2Val": "0.012",
+                  "coVal": "0.9",
+                  "envrnGrad": "보통"
+                },
+                {
+                  "ivstgOdr": "2016_4차",
+                  "ivstgBgnde": "20161102",
+                  "ivstgEndde": "20161108",
+                  "pm10Val": "43",
+                  "no2Val": "0.014",
+                  "so2Val": "0.008",
+                  "coVal": "1",
+                  "envrnGrad": "보통"
+                },
+                {
+                  "ivstgOdr": "2017_1차",
+                  "ivstgBgnde": "20170215",
+                  "ivstgEndde": "20170308",
+                  "pm10Val": "32",
+                  "no2Val": "0.012",
+                  "so2Val": "0.015",
+                  "coVal": "0.8",
+                  "envrnGrad": "보통"
+                },
+                {
+                  "ivstgOdr": "2017_2차",
+                  "ivstgBgnde": "20170425",
+                  "ivstgEndde": "20170529",
+                  "pm10Val": "37",
+                  "no2Val": "0.012",
+                  "so2Val": "0.004",
+                  "coVal": "0.6",
+                  "envrnGrad": "보통"
+                }
+              ]
+            }
+          ]
+        }
+      ]
+    }
+  }
+}
