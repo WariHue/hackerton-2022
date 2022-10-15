@@ -12,6 +12,9 @@ body {
 .container-container {
     padding-left: 12px;
     padding-right: 12px;
+
+    height: 100vh;
+    overflow-y: auto;
 }
 
 .container {
@@ -19,16 +22,10 @@ body {
     margin-right: auto;
     margin-top: 48px;
     width: 100%;
-    max-width: 768px;
+    max-width: 1024px;
 }
 
 .searchbar-container {
-    width: 100%;
-    display: flex;
-
-    gap: 12px;
-}
-.image-container {
     width: 100%;
     display: flex;
 
@@ -74,6 +71,8 @@ body {
     padding: 12px 16px;
     font-size: 18px;
 
+    width: 0;
+
     transition: all ease .2s;
 }
 
@@ -93,21 +92,45 @@ body {
 
 .list {
     margin-top: 12px;
+
+    display: grid;
+
+    gap: 12px;
+}
+
+@media screen and (min-width: 1024px) {
+    .list {
+        grid-template-columns: 1fr 1fr 1fr;
+    }
 }
 
 .list-item {
-    border-top: 1px solid rgba(0, 0, 0, 0.2);
+    border: 1px solid rgba(0, 0, 0, 0.2);
     padding: 24px;
+    border-radius: 12px;
+
+    transition: all ease .2s;
+
+    display: flex;
+    flex-direction: column;
+}
+
+.list-item:hover {
+    border-color: #2e58ff;
 }
 
 .list-item-region {
     font-size: 20px;
+
+    flex-grow: 1;
 }
 
 .list-item-stats {
     display: flex;
 
     margin-top: 12px;
+
+    justify-content: space-between;
 
     gap: 16px;
 }
@@ -116,6 +139,10 @@ body {
     display: flex;
     flex-direction: column;
     align-items: center;
+
+    width: 0;
+    flex-grow: 1;
+    flex-shrink: 0;
 }
 
 .stat-label {

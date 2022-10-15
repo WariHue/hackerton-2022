@@ -16,9 +16,11 @@ let results = []
 
 let offset = 0
 
-let hasNext = false
+let hasNext = true
 
 let currentTerm = ''
+
+let fetching = false
 
 document.querySelector("#search-form").addEventListener("submit", async (e) => {
   e.preventDefault()
@@ -31,23 +33,29 @@ document.querySelector("#search-form").addEventListener("submit", async (e) => {
 })
 
 const search = async (text, offset = 0) => {
-  const { data } = await api.get("/search", {
-    params: {
-      q: text,
-      skip: offset,
-      limit: 10,
-    },
-  })
+  try {
+    if (fetching) return
 
-  if (!data.results.length) {
-    hasNext = false
-    return
-  }
-
-  results = data.results
-
-  for (const item of data.results) {
-    addItem(item)
+    const { data } = await api.get("/search", {
+      params: {
+        q: text,
+        skip: offset,
+        limit: 10,
+      },
+    })
+  
+    if (!data.results.length) {
+      hasNext = false
+      return
+    }
+  
+    results = data.results
+  
+    for (const item of data.results) {
+      addItem(item)
+    }
+  } finally {
+    fetching = false
   }
 }
 
@@ -61,6 +69,11 @@ const addItem = (item) => {
   const instance = itemTemplate.cloneNode(true)
 
   instance.querySelector(".list-item-region").innerText = item.address
+  instance.querySelector(".isj").innerText = item.isj
+  instance.querySelector(".sd").innerText = item.sd
+  instance.querySelector(".ag").innerText = item.ag
+
+  console.log(item)
 
   list.appendChild(instance)
 }
@@ -68,6 +81,18 @@ const addItem = (item) => {
 search(currentTerm)
 
 
-window.addEventListener('scroll', () => {
-  console.log(window.document.body.scrollHeight, window.scrollY + window.innerHeight)
+const container = document.querySelector('.container-container')
+
+container.addEventListener('scroll', () => {
+  const bottomOffset = container.scrollHeight - container.clientHeight - container.scrollTop
+
+  if(bottomOffset < 100) {
+    if (fetching) return
+
+    if (!hasNext) return
+
+    offset += 10
+
+    search(currentTerm, offset)
+  }
 })
