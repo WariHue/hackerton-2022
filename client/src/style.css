@@ -15,7 +15,7 @@ body {
   padding-right: 12px;
 
   height: 100vh;
-  overflow-y: auto;
+  overflow-y: scroll;
 }
 
 .container {
@@ -160,7 +160,7 @@ body {
   transition: all ease 0.6s;
 }
 
-.dino:hover {
+.dino:not(.spin):hover {
   transform: rotate(360deg);
 }
 
@@ -243,4 +243,20 @@ body {
   align-items: center;
   margin-top: 24px;
   gap: 12px;
+}
+
+@keyframes spin {
+  from {
+    rotate: 0deg;
+  }
+  to {
+    rotate: 360deg;
+  }
+}
+
+.dino.spin {
+  animation-name: spin;
+  animation-duration: .5s;
+  animation-iteration-count: infinite;
+  animation-timing-function: linear;
 }

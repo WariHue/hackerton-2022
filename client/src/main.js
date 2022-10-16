@@ -1,4 +1,6 @@
 import Axios from "axios"
+import NProgress from "nprogress"
+import "nprogress/nprogress.css"
 
 const api = Axios.create({ baseURL: import.meta.env.VITE_API_ENDPOINT })
 
@@ -34,9 +36,20 @@ document.querySelector("#search-form").addEventListener("submit", async (e) => {
 
 const container = document.querySelector(".container-container")
 
+const dino = document.querySelector("#dino")
+
 const search = async (text) => {
   try {
     if (fetching) return
+
+    if (currentTerm === "//dino" || currentTerm === "//디노") {
+      dino.classList.add("spin")
+      return
+    } else {
+      dino.classList.remove("spin")
+    }
+
+    NProgress.start()
 
     const { data } = await api.get("/search", {
       params: {
@@ -50,7 +63,7 @@ const search = async (text) => {
 
     maxPage = Math.ceil(data.count / 12)
 
-    pageLabel.innerText = `${Math.max(page, maxPage)} / ${maxPage} 페이지`
+    pageLabel.innerText = `${Math.min(page, maxPage)} / ${maxPage} 페이지`
 
     clearItems()
 
@@ -61,6 +74,7 @@ const search = async (text) => {
     container.scrollTo({ top: 0, behavior: "smooth" })
   } finally {
     fetching = false
+    NProgress.done()
   }
 }
 
@@ -86,8 +100,6 @@ search(currentTerm)
 
 const prevButton = document.querySelector("#page-prev")
 const nextButton = document.querySelector("#page-next")
-
-console.log(prevButton, nextButton)
 
 prevButton.addEventListener("click", (e) => {
   e.preventDefault()
