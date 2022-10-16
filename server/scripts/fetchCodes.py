@@ -13,7 +13,7 @@ for line in lines:
         if first:
             first = False
             continue
-        if '창원시 성산구' not in line[3]:
+        if '경상남도' not in line[3]:
             continue
 
         for i in result:

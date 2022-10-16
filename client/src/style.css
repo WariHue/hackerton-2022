@@ -1,162 +1,246 @@
-    @import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+@import url("https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.6/dist/web/variable/pretendardvariable-dynamic-subset.css");
+@import url("https://fonts.googleapis.com/css2?family=Black+Han+Sans&display=swap");
 
 body {
-    width: 100vw;
-    margin: 0;
+  width: 100vw;
+  margin: 0;
 }
 
 * {
-    font-family: 'Pretendard Variable', sans-serif;
+  font-family: "Pretendard Variable", sans-serif;
 }
 
 .container-container {
-    padding-left: 12px;
-    padding-right: 12px;
+  padding-left: 12px;
+  padding-right: 12px;
 
-    height: 100vh;
-    overflow-y: auto;
+  height: 100vh;
+  overflow-y: auto;
 }
 
 .container {
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 48px;
-    width: 100%;
-    max-width: 1024px;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 48px;
+  width: 100%;
+  max-width: 1024px;
 }
 
 .searchbar-container {
-    width: 100%;
-    display: flex;
+  width: 100%;
+  display: flex;
 
-    gap: 12px;
+  gap: 12px;
 }
 
 .searchbar {
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .search-button {
-    flex-shrink: 0;
-    padding: 6px 16px;
-    border: none;
-    outline: none;
+  flex-shrink: 0;
+  padding: 6px 16px;
+  border: none;
+  outline: none;
 
-    background: #2e58ff;
+  background: #2e58ff;
 
-    color: #fff;
-    border-radius: 6px;
+  color: #fff;
+  border-radius: 6px;
 
-    cursor: pointer;
+  cursor: pointer;
 
-    font-size: 20px;
+  font-size: 20px;
 
-    font-weight: 100;
+  font-weight: 100;
 
-    transition: all ease .2s;
+  transition: all ease 0.2s;
 }
 
 .search-button:hover {
-    filter: brightness(0.8);
+  filter: brightness(0.8);
 }
 
 .search-button:active {
-    filter: brightness(0.6);
+  filter: brightness(0.6);
 }
 
 .searchbar {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    background: transparent;
-    border-radius: 6px;
-    padding: 12px 16px;
-    font-size: 18px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  background: transparent;
+  border-radius: 6px;
+  padding: 12px 16px;
+  font-size: 18px;
 
-    width: 0;
+  width: 0;
 
-    transition: all ease .2s;
+  transition: all ease 0.2s;
 }
 
 .image {
-    background: transparent;
-    border-radius: 6px;
-    padding: 50px 50px;
+  background: transparent;
+  border-radius: 6px;
+  padding: 50px 50px;
 
-    transition: all ease .2s;
+  transition: all ease 0.2s;
 }
 
 .searchbar:focus {
-    outline: none;
+  outline: none;
 
-    border-color: #2e58ff;
+  border-color: #2e58ff;
 }
 
 .list {
-    margin-top: 12px;
+  margin-top: 12px;
 
-    display: grid;
+  display: grid;
 
-    gap: 12px;
+  gap: 12px;
+}
+
+@media screen and (min-width: 512px) {
+  .list {
+    grid-template-columns: 1fr 1fr;
+  }
 }
 
 @media screen and (min-width: 1024px) {
-    .list {
-        grid-template-columns: 1fr 1fr 1fr;
-    }
+  .list {
+    grid-template-columns: 1fr 1fr 1fr;
+  }
 }
 
 .list-item {
-    border: 1px solid rgba(0, 0, 0, 0.2);
-    padding: 24px;
-    border-radius: 12px;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  padding: 24px;
+  border-radius: 12px;
 
-    transition: all ease .2s;
+  transition: all ease 0.2s;
 
-    display: flex;
-    flex-direction: column;
+  display: flex;
+  flex-direction: column;
 }
 
 .list-item:hover {
-    border-color: #2e58ff;
+  border-color: #2e58ff;
 }
 
 .list-item-region {
-    font-size: 20px;
+  font-size: 20px;
 
-    flex-grow: 1;
+  flex-grow: 1;
 }
 
 .list-item-stats {
-    display: flex;
+  display: grid;
 
-    margin-top: 12px;
+  grid-template-columns: 1fr 1fr;
 
-    justify-content: space-between;
+  margin-top: 12px;
 
-    gap: 16px;
+  gap: 16px;
 }
 
 .list-item-stat {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-
-    width: 0;
-    flex-grow: 1;
-    flex-shrink: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
 
 .stat-label {
-    font-weight: 300;
+  font-weight: 300;
 }
 
 .stat-value {
-    font-weight: 700;
+  font-weight: 700;
 }
 
 .dino {
-    transition: all ease .6s;
+  transition: all ease 0.6s;
 }
 
 .dino:hover {
-    transform: rotate(360deg);
+  transform: rotate(360deg);
+}
+
+.copyright {
+  text-align: center;
+  font-size: 18px;
+  margin-top: 24px;
+  margin-bottom: 24px;
+  color: rgba(0, 0, 0, 0.4);
+}
+
+.ti {
+  text-align: center;
+  font-size: 80px;
+  margin-top: 72px;
+  color: rgb(175, 91, 130);
+  font-family: 'Black Han Sans', sans-serif;
+  line-height: 58px;
+}
+
+.sti {
+  text-align: center;
+  font-size: 30px;
+  margin-bottom: 24px;
+  color: rgb(79, 58, 122);
+}
+
+.material-symbols-outlined {
+  font-variation-settings:
+  'FILL' 0,
+  'wght' 400,
+  'GRAD' 0,
+  'opsz' 48
+}
+
+.pagination-container .material-symbols-outlined {
+  font-size: 24px;
+  user-select: none;
+}
+
+.pagination-left {
+  width: 12px;
+  margin-left: -6px;
+  margin-right: 16px;
+}
+
+.pagination-right {
+  width: 16px;
+}
+
+.pagination-button {
+  display: flex;
+  align-items: center;
+  padding: 6px 12px;
+
+  background: transparent;
+  outline: none;
+
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  cursor: pointer;
+
+  border-radius: 6px;
+
+  transition: all ease .2s;
+  width: 72px;
+}
+
+.pagination-button:hover {
+  border-color: #2e58ff;
+  color: #2e58ff;
+}
+
+.pagination-container .page-label {
+  font-size: 16px;
+}
+
+.pagination-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 24px;
+  gap: 12px;
 }

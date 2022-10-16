@@ -10,17 +10,17 @@ const searchInput = document.querySelector("#searchbar")
 const list = document.querySelector("div#list-wrapper")
 const itemTemplate = document.querySelector("#list-item-template").content
 
-console.log(itemTemplate)
-
 let results = []
 
-let offset = 0
+let page = 1
 
-let hasNext = true
+let maxPage = 0
 
-let currentTerm = ''
+let currentTerm = ""
 
 let fetching = false
+
+const pageLabel = document.querySelector("#page-label")
 
 document.querySelector("#search-form").addEventListener("submit", async (e) => {
   e.preventDefault()
@@ -32,28 +32,33 @@ document.querySelector("#search-form").addEventListener("submit", async (e) => {
   await search(currentTerm)
 })
 
-const search = async (text, offset = 0) => {
+const container = document.querySelector(".container-container")
+
+const search = async (text) => {
   try {
     if (fetching) return
 
     const { data } = await api.get("/search", {
       params: {
         q: text,
-        skip: offset,
-        limit: 10,
+        skip: 12 * (page - 1),
+        limit: 12,
       },
     })
-  
-    if (!data.results.length) {
-      hasNext = false
-      return
-    }
-  
+
     results = data.results
-  
+
+    maxPage = Math.ceil(data.count / 12)
+
+    pageLabel.innerText = `${Math.max(page, maxPage)} / ${maxPage} 페이지`
+
+    clearItems()
+
     for (const item of data.results) {
       addItem(item)
     }
+
+    container.scrollTo({ top: 0, behavior: "smooth" })
   } finally {
     fetching = false
   }
@@ -69,30 +74,37 @@ const addItem = (item) => {
   const instance = itemTemplate.cloneNode(true)
 
   instance.querySelector(".list-item-region").innerText = item.address
-  instance.querySelector(".isj").innerText = item.isj
-  instance.querySelector(".sd").innerText = item.sd
-  instance.querySelector(".ag").innerText = item.ag
-
-  console.log(item)
+  instance.querySelector(".isj").innerText = item.isj + "ppm"
+  instance.querySelector(".sd").innerText = item.sd + "㎍/㎥"
+  instance.querySelector(".ag").innerText = item.ag + "ppm"
+  instance.querySelector(".iot").innerText = item.iot + "ppm"
 
   list.appendChild(instance)
 }
 
 search(currentTerm)
 
+const prevButton = document.querySelector("#page-prev")
+const nextButton = document.querySelector("#page-next")
 
-const container = document.querySelector('.container-container')
+console.log(prevButton, nextButton)
 
-container.addEventListener('scroll', () => {
-  const bottomOffset = container.scrollHeight - container.clientHeight - container.scrollTop
+prevButton.addEventListener("click", (e) => {
+  e.preventDefault()
 
-  if(bottomOffset < 100) {
-    if (fetching) return
+  if (page <= 1 || fetching) return
 
-    if (!hasNext) return
+  page--
 
-    offset += 10
+  search(currentTerm)
+})
 
-    search(currentTerm, offset)
-  }
+nextButton.addEventListener("click", (e) => {
+  e.preventDefault()
+
+  if (page == maxPage || fetching) return
+
+  page++
+
+  search(currentTerm)
 })
