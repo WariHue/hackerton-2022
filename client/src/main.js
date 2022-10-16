@@ -44,6 +44,8 @@ const search = async (text) => {
 
     if (currentTerm === "//dino" || currentTerm === "//디노") {
       dino.classList.add("spin")
+
+      pageLabel.innerText = `DINO / DINO 페이지`
       return
     } else {
       dino.classList.remove("spin")

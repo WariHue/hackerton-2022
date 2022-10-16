@@ -1,6 +1,7 @@
 import json
 from fastapi import FastAPI
 from fastapi.middleware.cors import CORSMiddleware
+from fastapi.staticfiles import StaticFiles
 
 app = FastAPI()
 
@@ -59,3 +60,5 @@ def search(q: str = '', skip: int = 0, limit: int = 30, sort: int = 0):
 
 
     }
+
+app.mount('/', StaticFiles(directory='../client/dist/', html=True), name='static')
