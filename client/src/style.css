@@ -171,6 +171,10 @@ body {
   margin-top: 24px;
   margin-bottom: 24px;
   color: rgba(0, 0, 0, 0.4);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .ti {
@@ -268,4 +272,9 @@ body {
   animation-duration: .5s;
   animation-iteration-count: infinite;
   animation-timing-function: linear;
+}
+
+.copyright-dino-icon {
+  width: 24px;
+  height: 24px;
 }
