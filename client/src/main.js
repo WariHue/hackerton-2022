@@ -90,10 +90,32 @@ const addItem = (item) => {
   const instance = itemTemplate.cloneNode(true)
 
   instance.querySelector(".list-item-region").innerText = item.address
-  instance.querySelector(".isj").innerText = item.isj + "ppm"
-  instance.querySelector(".sd").innerText = item.sd + "㎍/㎥"
-  instance.querySelector(".ag").innerText = item.ag + "ppm"
-  instance.querySelector(".iot").innerText = item.iot + "ppm"
+  const isj = instance.querySelector(".isj")
+  isj.innerText = item.isj + "ppm"
+
+  if (isj >= 0.1) {
+    isj.style.color = "#ff2929"
+  }
+
+  const sd = instance.querySelector(".sd")
+  sd.innerText = item.sd + "㎍/㎥"
+
+  if (item.sd >= 50) {
+    sd.style.color = "#ff2929"
+  }
+
+  const ag = instance.querySelector(".ag")
+  ag.innerText = item.ag + "ppm"
+
+  if (item.ag > 25) {
+    ag.style.color = "#ff2929"
+  }
+  const iot = instance.querySelector(".iot")
+  iot.innerText = item.iot + "ppm"
+
+  if (item.iot >= 25) {
+    iot.style.color = "#ff2929"
+  }
 
   list.appendChild(instance)
 }

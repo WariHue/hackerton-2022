@@ -29,6 +29,7 @@ body {
 .searchbar-container {
   width: 100%;
   display: flex;
+  margin-bottom: 12px;
 
   gap: 12px;
 }
@@ -187,6 +188,14 @@ body {
   margin-bottom: 24px;
   color: rgb(79, 58, 122);
 }
+
+
+.ssti {
+  text-align: right;
+  font-size: 15px;
+  color: rgb(136, 4, 4);
+}
+
 
 .material-symbols-outlined {
   font-variation-settings:
