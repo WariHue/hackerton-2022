@@ -29,7 +29,7 @@ document.querySelector("#search-form").addEventListener("submit", async (e) => {
 
   currentTerm = searchInput.value
 
-  clearItems()
+  page = 1
 
   await search(currentTerm)
 })
